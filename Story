@@ -1,0 +1,89 @@
+
+import java.awt.Color;
+import javax.swing.JOptionPane;
+import java.awt.Font;
+
+
+public class ThatsYourStory  {
+
+	public static void main(String[] args) {
+		
+		GTerm gt = new GTerm(1000, 1000);
+		
+		gt.setXY(70, 40);
+		gt.setLocationRelativeTo(null);
+		gt.setBackgroundColor(Color.black);
+		gt.setFontSize(30);
+		gt.setFontColor(Color.yellow);
+		gt.setFontName(Font.SANS_SERIF);
+		gt.println("The greatest rock n roll story");
+		gt.setFontSize(15);
+		gt.setFontColor(Color.white);
+	
+	
+		
+
+		gt.setXY(70, 120);
+		gt.addImageIcon("images/JarradDelorean.png");
+
+		gt.setXY(70, 10);
+		JOptionPane.showMessageDialog(null,
+				"Hey! Welcome to the story, I'm not sure how you got here but you are here now and" + "\n"
+						+ "thats all that matters. Click OKAY if you wish to continue");
+		gt.setXY(70, 500);
+		String name = gt.getInputString("Please enter your name.");
+
+		boolean legal = Boolean
+				.parseBoolean(gt.getInputString(name + " " + "You're over the age of 18? True or False?"));
+
+		if (legal == true) {
+
+			gt.println("Welcome to the story of" + " " + name);
+		} else {
+			JOptionPane.showMessageDialog(null, "Come back when you're old enough!");
+			return;
+			
+		}
+		char dreams = gt.getInputString(name + " " + "Do you consider yourself a dreamer? Y or N").charAt(0);
+
+		if (dreams == 'y') {
+			gt.println("As we all know" + " " + name + " " + "was a dreamer and had massive plans" + "\n"
+					+ "to take over the world as a famous drummerAnd oh boy did" + " " + name + " " + "practise!!"
+					+ "\n" + "Spent every waking hour obsessing about hitting the big time and it became" + "\n" + " "
+					+ name + "'s whole world until it happened! In 2010" + " " + name + " " + "signed " + "\n"
+					+ "a record deal with the biggest label in the world and started touring the globe. " + "\n"
+					+ "Playing the biggest festivals and even had a hit show on MTV");
+		}
+		if (dreams == 'n') {
+			gt.println(name + " " + "wasn't much of a dreamer" + " " + name + " "
+					+ "naver did have dreams to take over the world as a famous drummer." + "\n"
+					+ "but needed to be cool, had to find something that was" + "\n"
+					+ "going to make them popular and some how it all happened for" + " " + name + " ." + "\n"
+					+ "In 2010" + " " + name + " " + "signed a record deal with the biggest label in the world and"
+					+ "\n"
+					+ "started touring the globe, playing the biggest music festivals in the world and even a hit "
+					+ "\n" + "show on MTV");
+		}
+
+		float old = Float.parseFloat(gt.getInputString("how old are you exaclty" + " " + name + " " + "?"));
+
+		if (old <= 22) {
+			gt.println("The touring, the fame and the insecurity was starting to get too much for" + " " + name + " "
+					+ "\n" + "and decided to quit the crazy pace of being a rock star." + " " + name + " " + "is now"
+					+ " " + old + "\n"
+					+ "and has been married for 2 years with 2 beautiful children, but had fond memories of being in the biggest band"
+					+ "\n" + "in the world");
+		} else {
+			gt.println(name + " " + "Started drinking booze heavily and became reliant on heavy drinking and hard drugs"
+					+ "\n"
+					+ "it became a huge problem, one time in an MTV interview NAME vomited and punched the presenter"
+					+ "\n" + "became even more famous for causing an American airplane to emergency land due to drunked"
+					+ "\n" + "behaviour, no one knows where" + " " + name
+					+ "is weather they are even alive, there are roumers " + "\n" + "that" + " " + name + " "
+					+ "lives under the brigde of Ronnie Woods castle");
+			
+		}
+
+	}
+
+}
